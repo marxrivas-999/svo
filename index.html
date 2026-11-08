@@ -4,8 +4,72 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistema Online de Ventas</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    
+    <header>
+        <h1>Sistema Online de Ventas</h1>
+        <p>Sprint 1 · Catálogo de productos</p>
+    </header>
+
+    <main>
+        <!-- HU01 y HU03: registrar / modificar productos -->
+        <section class="card">
+            <h2 id="tituloForm">Registrar producto</h2>
+            <form id="formProducto" novalidate>
+                <label>Código
+                    <input type="text" id="codigo" placeholder="Ej. P001">
+                </label>
+                <label>Nombre *
+                    <input type="text" id="nombre" placeholder="Nombre del producto">
+                </label>
+                <label>Descripción
+                    <input type="text" id="descripcion" placeholder="Descripción breve">
+                </label>
+                <label>Categoría
+                    <input type="text" id="categoria" placeholder="Ej. Electrónica">
+                </label>
+                <label>Precio *
+                    <input type="text" id="precio" placeholder="0.00">
+                </label>
+                <label>Existencias *
+                    <input type="text" id="existencias" placeholder="0">
+                </label>
+
+                <p id="mensaje" role="alert"></p>
+
+                <div class="botones">
+                    <button type="submit" id="btnGuardar">Guardar</button>
+                    <button type="button" id="btnCancelar" class="secundario" hidden>Cancelar edición</button>
+                </div>
+            </form>
+        </section>
+
+        <!-- HU02: consultar catálogo -->
+        <section class="card">
+            <h2>Catálogo de productos</h2>
+            <div class="filtros">
+                <input type="text" id="buscar" placeholder="Buscar por nombre o código">
+                <select id="filtroCategoria">
+                    <option value="">Todas las categorías</option>
+                </select>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Código</th>
+                        <th>Nombre</th>
+                        <th>Categoría</th>
+                        <th>Precio</th>
+                        <th>Existencias</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="tablaProductos"></tbody>
+            </table>
+        </section>
+    </main>
+
+    <script src="js/script.js"></script>
 </body>
 </html>
